@@ -1,0 +1,6 @@
+set terminal jpeg
+set output "plot.jpg"
+set style data lines
+set grid
+plot "func.txt"
+exit
