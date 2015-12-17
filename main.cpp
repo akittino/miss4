@@ -24,9 +24,9 @@ public:
   }
 };
 
-double f(double y, double x)
+double f(double t, double x)
 {
-  return sin(20*y);
+  return sin(20*t);
 }
 
 
