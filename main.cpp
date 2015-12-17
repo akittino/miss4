@@ -26,7 +26,7 @@ public:
 
 double f(double y, double x)
 {
-  return (x);
+  return sin(20*y);
 }
 
 
@@ -54,10 +54,11 @@ void plotChart(vector <Point*> points)
 
 int main(int argc, char* argv[])
 {
-  double x0, e, h0;
+  double x0, e, h0, c;
   vector <Point*> points;
   cin >> x0 >> e;
   h0 = H_VALUE;
+  c = e;
 
   points.push_back(new Point(TMIN, x0));
 
@@ -69,10 +70,9 @@ int main(int argc, char* argv[])
     }
     double xk1 = runge_kutta(tval, points.back()->y, h0);
     double xk2 = runge_kutta(tval + h0, xk1, h0);
-
     double wk2 = runge_kutta(tval, points.back()->y, 2 * h0);
     double gamma = pow(((e * h0) / (TMAX - TMIN)) * ((P_POWER - 1) / fabs(wk2 - xk2)), (1 / P));
-    double h1 = 0.8 * gamma * h0;
+    double h1 = c * gamma * h0;
 
     if(h1 > 5 * h0)
     {
