@@ -26,7 +26,8 @@ public:
 
 double f(double t, double x)
 {
-  return sin(20*t);
+  //return x;
+  return sqrt(x);
 }
 
 
